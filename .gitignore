@@ -1,11 +1,5 @@
-# macOS
 .DS_Store
-
-# RStudio/R
 .Rproj.user/
 .Rhistory
 .RData
 .Ruserdata
-
-# Output directories (keep generated files tracked only when you add them)
-# (We won't ignore output/ here because you need gitlog.txt and Rscript.log)
