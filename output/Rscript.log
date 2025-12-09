@@ -1,0 +1,61 @@
+indexing youtube-top-100-songs-2025.csv [=========] 39.26GB/s, eta:  0s                                                                       Rows after cleaning: 100 
+
+Pearson (log10-log10):
+
+	Pearson's product-moment correlation
+
+data:  d_log$log_followers and d_log$log_views
+t = 13.739, df = 98, p-value < 2.2e-16
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.7314650 0.8692198
+sample estimates:
+      cor 
+0.8113186 
+
+
+Spearman (raw):
+
+	Spearman's rank correlation rho
+
+data:  d$channel_follower_count and d$view_count
+S = 91380, p-value = 2.396e-06
+alternative hypothesis: true rho is not equal to 0
+sample estimates:
+      rho 
+0.4516648 
+
+
+Linear model (log10-log10):
+
+Call:
+lm(formula = log_views ~ log_followers, data = d_log)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-3.13103 -0.46175  0.04016  0.51546  1.51888 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    2.60741    0.34594   7.537 2.43e-11 ***
+log_followers  0.72467    0.05275  13.739  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.7805 on 98 degrees of freedom
+Multiple R-squared:  0.6582,	Adjusted R-squared:  0.6548 
+F-statistic: 188.7 on 1 and 98 DF,  p-value: < 2.2e-16
+
+
+Tidy model:
+# A tibble: 2 × 5
+  term          estimate std.error statistic  p.value
+  <chr>            <dbl>     <dbl>     <dbl>    <dbl>
+1 (Intercept)      2.61     0.346       7.54 2.43e-11
+2 log_fol  term          estimate std.error statistic  p.value
+  <chr>            <dbl>     <dbl>     <dbl>    <dbl>
+1 (Intercept)      2.61     0.346       7.54 2.43e-11
+2 log_fol  term          estimate std.error statistic  p.value
+  <chr>            <dbl>     <dbl>     <dbl>    <dbl>
+1 (Intercept)      2.61     0.346       7.54 2.43e-11
+2 log_followers    0.725    0.0527     13.7  1.40e-24
